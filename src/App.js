@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from './logo.svg';
 import './App.css';
 
-class Prop extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,9 @@ class Prop extends Component {
   }
 
 
+
   render() {
+    
     return (
       <div className="App">
         <header style={this.styles} className="App-header">
@@ -29,11 +31,15 @@ class Prop extends Component {
           <p>{this.state.subTitle}</p>
           <p>{this.state.stuId}</p>
           <p>{this.state.name}</p>
-          <p>{this.state.location}</p>
+          <p>{this.props.locationProp}</p>
         </header>
       </div>
     );
+    
   }
+  
 }
-
-export default Prop;
+App.defaultProps = {
+  locationProp: "George Brown College, Toronto"
+}  
+export default App;
